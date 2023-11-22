@@ -1,0 +1,8 @@
+<h1>List of sick patients:</h1>
+
+<ul>
+  <% @uncured_patients.each do |patient| %>
+    <li><%= link_to "#{patient.first_name} #{patient.last_name}", patient_path(patient) %></li>
+  <% end %>
+</ul>
+<%= link_to "Create new Patient", new_patient_path %>

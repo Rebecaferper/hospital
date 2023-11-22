@@ -5,4 +5,11 @@
 <p><%= @doctor.specialty %></p>
 <p><%= @doctor.experience%></p>
 <%= link_to "edit doctor", edit_doctor_path %>
-<%= link_to "Delete", delete_doctor_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+<%= link_to "Delete", doctor_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+<%= link_to "add education", new_doctor_education_path(@doctor) %>
+<ul>
+  <% @doctor.educations.each do |education| %>
+    <li><%= "#{education.university} #{education.degree_name} #{education.score}" %>
+    <li><%= link_to "Edit Education", edit_education_path(education) %></li></li>
+  <% end %>
+</ul>
