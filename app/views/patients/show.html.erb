@@ -1,0 +1,6 @@
+<h2><%= @patient.first_name %></h2>
+<p><%= @patient.last_name%></p>
+<p><%= @patient.insurance %></p>
+<p><%= @patient.cured%></p>
+<%= link_to "edit patient", edit_patient_path %>
+<%= link_to "Delete", patient_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
